@@ -8,10 +8,10 @@
 
 **Course**: ECE 572; Summer 2025
 **Instructor**: Dr. Ardeshir Shojaeinasab
-**Student Name**: [Your Name]  
-**Student ID**: [Your Student ID]  
-**Assignment**: [Assignment 1/2/3]  
-**Date**: [Submission Date]  
+**Student Name**: [chizhang]
+**Student ID**: [v00912586]  
+**Assignment**: [Assignment 1]  
+**Date**: [2025/6/20]  
 **GitHub Repository**: [Link to **your** forked repository]
 
 ---
