@@ -1,3 +1,84 @@
+# Generic Report Template for ECE 572
+
+**Use this template for all three assignments and modify if needed**
+
+**This template is made by GenAI help, if you believe some changes are required or some parts need revision, feel free to send a merge request or send an email!**
+
+---
+
+**Course**: ECE 572; Summer 2025
+**Instructor**: Dr. Ardeshir Shojaeinasab
+**Student Name**: [Your Name]  
+**Student ID**: [Your Student ID]  
+**Assignment**: [Assignment 1/2/3]  
+**Date**: [Submission Date]  
+**GitHub Repository**: [Link to **your** forked repository]
+
+---
+
+## Executive Summary
+
+<!-- 
+Provide a brief overview of what you accomplished in this assignment. 
+For Assignment 1: Focus on vulnerabilities found and security improvements made
+For Assignment 2: Focus on authentication enhancements and Zero Trust implementation  
+For Assignment 3: Focus on cryptographic protocols and end-to-end security
+Keep this section to 1-2 paragraphs.
+-->
+
+[Write your executive summary here]
+
+---
+
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Task Implementation](#task-implementation)
+   - [Task X](#task-x)
+   - [Task Y](#task-y)
+   - [Task Z](#task-z)
+3. [Security Analysis](#security-analysis)
+4. [Attack Demonstrations](#attack-demonstrations)
+5. [Performance Evaluation](#performance-evaluation)
+6. [Lessons Learned](#lessons-learned)
+7. [Conclusion](#conclusion)
+8. [References](#references)
+
+---
+
+## 1. Introduction
+ This is assignment 1. doing my homework just by the end of duedate
+### 1.1 Objective
+<!-- Describe the main objectives of this assignment -->
+After completing this assignment, you will understand:
+- Common security vulnerabilities in applications
+- Password storage security (hashing, salting)
+- Network eavesdropping and message tampering
+- Message Authentication Codes (MACs) and their vulnerabilities
+- Length extension attacks on hash-based MACs
+### 1.2 Scope
+<!-- Define what you implemented and what you focused on -->
+You have been provided with a fully functional but intentionally insecure console-based messenger application called "SecureText" (located at `src/securetext.py`). Your task is to analyze this application and identify its security vulnerabilities.
+### 1.3 Environment Setup
+<!-- Briefly describe your development environment -->
+- **Operating System**: kali
+- **Python Version**: 3.10.4
+- **Key Libraries Used**:
+import socket
+import threading
+import json
+import os
+import sys
+import time
+from datetime import datetime
+import hashlib
+import bcrypt
+import hmac
+from HashTools import new
+- **Development Tools**: 
+txt file
+---
+
 \## Task 1: Security Vulnerability Analysis (25 points)
 
 \### Background
@@ -601,3 +682,126 @@ anyone can change anyone's password. The key can be created by simply
 create some pre-defined message sending protocol for public and private
 key exchange protocol. And the key is dropped after the session is
 closed
+### 3.1 Vulnerability Assessment
+<!-- For Assignment 1: Document vulnerabilities found in the base application -->
+<!-- For Assignment 2/3: Analyze security improvements made -->
+
+**Identified Vulnerabilities** (Assignment 1):
+| Vulnerability | Severity | Impact | Location(function/action) | Mitigation |
+|---------------|----------|---------|----------|------------|
+| password changing  | critical | critical | reset_password | N/A |
+| plaintext communication| large | medium | send_data| N/A |
+| password unhashed | medium | medium | JSON file | done |
+| communication unauthenticaed | medium | critical | send_data | done |
+| account creation imbalanced | medium | medium | create_account | N/A |
+### 3.2 Security Improvements
+<!-- Document the security enhancements you implemented -->
+
+**Before vs. After Analysis**:
+- **Authentication**: [If applicable otherwise remove][How it improved]
+- **Authorization**: communication hmac calculated 
+- **Data Protection**: password hashed
+- **Communication Security**: [If applicable otherwise remove][How it improved]
+
+### 3.3 Threat Model
+<!-- Describe the threats your implementation addresses -->
+Solved password direct exposure
+**Use the following security properties and threat actors in your threat modeling. You can add extra if needed.**
+
+**Threat Actors**:
+3. **Malicious Server Operator**: Has access to server and database
+
+**Security Properties Achieved**:
+- [x] Confidentiality
+- [ ] Integrity  
+- [ ] Authentication
+- [ ] Authorization
+- [ ] Non-repudiation
+- [ ] Perfect Forward Secrecy
+- [x] Privacy
+
+Solved message authenticity
+**Threat Actors**:
+2. **Active Network Attacker**: Can intercept and modify traffic
+
+**Security Properties Achieved**:
+- [ ] Confidentiality
+- [x] Integrity  
+- [x] Authentication
+- [ ] Authorization
+- [ ] Non-repudiation
+- [ ] Perfect Forward Secrecy
+- [ ] Privacy
+---
+
+## 4. Attack Demonstrations
+
+no attacks performed
+---
+
+## 5. Performance Evaluation
+Basic test results in terms of resources used in terms of hardware and time. Also, if the test has limitations and fix worked properly(test passed or failed)
+
+see tast report
+
+---
+
+## 6. Lessons Learned
+
+### 6.1 Technical Insights
+<!-- What did you learn about security implementations? -->
+
+1. **Insight 1**: Python byte and string are not the same thing
+2. **Insight 2**: Python (3.10+) can not use hashpumpy
+
+
+---
+
+## 7. Conclusion
+
+### 7.1 Summary of Achievements
+<!-- Summarize what you accomplished -->
+
+### 7.2 Security and Privacy Posture Assessment
+<!-- How secure is your final implementation? -->
+
+**Remaining Vulnerabilities**:
+- Vulnerability 1: [Description and justification]
+- Vulnerability 2: [Description and justification]
+
+**Suggest an Attack**: In two lines mention a possible existing attack to your current version in abstract
+
+### 7.3 Future Improvements
+<!-- What would you do if you had more time? -->
+
+1. **Improvement 1**: do assignment 2
+2. **Improvement 2**: do assignment 3
+
+
+## Submission Checklist
+
+Before submitting, ensure you have:
+
+- [ ] **Complete Report**: All sections filled out with sufficient detail
+- [ ] **Evidence**: Screenshots, logs, and demonstrations included
+- [ ] **Code**: Well-named(based on task and whether it is an attack or a fix) and well-commented and organized in your GitHub repository deliverable directory of the corresponding assignment
+- [ ] **Tests**: Security and functionality tests implemented after fix
+- [ ] **GitHub Link**: Repository link included in report and Brightspace submission
+- [ ] **Academic Integrity**: All sources properly cited, work is your own
+
+---
+
+**Submission Instructions**:
+1. Save this report as PDF: `[StudentID]_Assignment[X]_Report.pdf`
+2. Submit PDF to Brightspace
+3. Include your GitHub repository fork link in the Brightspace submission comments
+4. Ensure your repository is private until after course completion otherwise you'll get zero grade
+
+**Final Notes**:
+- Use **GenAI** for help but do not let **GenAI** to do all the work and you should understand everything yourself
+- If you used any **GenAI** help make sure you cite the contribution of **GenAI** properly
+- Be honest about limitations and challenges
+- Focus on demonstrating understanding, not just working code
+- Proofread for clarity and technical accuracy
+
+Good luck!
